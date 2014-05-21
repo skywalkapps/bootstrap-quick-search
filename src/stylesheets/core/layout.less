@@ -1,0 +1,78 @@
+//
+// LAYOUT
+// -----------------------------
+
+html, body {
+  height: 100%;
+}
+
+// CONTAINERS
+// -------------------------
+
+.container {
+  max-width: 940px;
+}
+
+#skywalkapp .container {
+}
+
+#screen-container {
+  text-align: center;
+}
+
+#image-container {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto @navbar-height;
+  &.cursor-crosshair {
+    cursor: crosshair;
+  }
+}
+
+#comments-container,
+#hotspots-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#comments-container {
+
+}
+
+// HEADER
+// -------------------------
+
+.l-header {
+  padding: 15px;
+}
+
+// TOOLBAR
+// -------------------------
+@toolbar-background: #2e3335;
+
+.l-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  padding: 2*@padding-large-vertical 2*@padding-large-horizontal;
+  background: @toolbar-background;
+  color: #fff;
+}
+
+// Intro
+.l-intro {
+  // max-width: 960px;
+  // margin: 0 auto;
+  // text-align: left;
+}
+
+// Navbar
+.l-toolbar .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-lef: 0;
+  border-right: 0;
+}

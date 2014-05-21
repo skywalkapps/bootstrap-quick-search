@@ -1,0 +1,20 @@
+{
+  "name": "your_project_name",
+  "description": "Starter template for quick front-end development.",
+  "version": "0.1.0",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "starter",
+    "bootstrap",
+    "front-end",
+    "web"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "normalize-css": "latest",
+    "bootstrap": "~3.0.0",
+    "respondJS": "latest"
+  }
+}

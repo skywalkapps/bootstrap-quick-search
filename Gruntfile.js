@@ -19,15 +19,23 @@ module.exports = function(grunt) {
 
     /*
       Reads the projects .jshintrc file and applies coding
-      standards. Doesn't lint the dependencies or test
-      support files.
+      standards.
     */
     jshint: {
-      all: ['Gruntfile.js', 'src/javascripts/**/*.js'],
       options: {
         jshintrc: 'src/javascripts/.jshintrc'
+      },
+      grunt: {
+        options: {
+          jshintrc: '.jshintrc'
+        },
+        src: ['Gruntfile.js']
+      },
+      src: {
+        src: 'src/javascripts/*.js'
       }
     },
+
 
     copy: {
       styles: {
@@ -132,7 +140,7 @@ module.exports = function(grunt) {
 
   });
 
-  // These plugins provide necessary tasks.
+  // These plugins provide necessary tasks
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -140,22 +148,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-neuter');
 
-
-  // Default build task.
+  // Default build task
   grunt.registerTask('default', ['clean', 'copy', 'dist-css', 'dist-js']);
 
-  // Build assets task.
-  grunt.registerTask('build', ['dist-css', 'dist-js']);
+  // JS tasks
+  grunt.registerTask('dist-js', ['neuter', 'uglify', 'compress']);
+  grunt.registerTask('dev-js', ['neuter', 'uglify', 'jshint']);
 
-  // JS distribution task.
-  // TODO: Compress later grunt.registerTask('dist-js', ['concat', 'uglify', 'compress']);
-  grunt.registerTask('dist-js', ['neuter', 'uglify']); //'jshint'
-
-  // Copy assets
-  grunt.registerTask('dist-copy', ['copy']);
-
-  // CSS distribution task.
+  // CSS tasks
   grunt.registerTask('dist-css', ['less']);
+  grunt.registerTask('dev-css', ['less', 'csslint']);
 };

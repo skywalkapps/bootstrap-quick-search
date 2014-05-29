@@ -129,12 +129,38 @@ module.exports = function(grunt) {
     // Watch for changes in styles and javascript and compile them on-the-fly
     watch: {
       styles: {
+        options: {
+          livereload: true
+        },
         files: ['src/stylesheets/**/*.less'],
         tasks: ['less']
       },
       js: {
         files: 'src/javascripts/**/*.js',
         tasks: ['neuter', 'uglify']
+      }
+    },
+
+    // grunt-express will serve the files from the folders listed in `bases`
+    // on specified `port` and `hostname`
+    express: {
+      all: {
+        options: {
+          port: 9999,
+          hostname: "0.0.0.0",
+          bases: [__dirname] // Replace with the directory you want the files served from
+                             // Make sure you don't use `.` or `..` in the path as Express
+                             // is likely to return 403 Forbidden responses if you do
+                             // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
+        }
+      }
+    },
+
+    // grunt-open will open your browser at the project's URL
+    open: {
+      all: {
+        // Gets the port from the connect configuration
+        path: 'http://localhost:<%= express.all.options.port%>'
       }
     }
 
@@ -150,6 +176,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-neuter');
+  grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-open');
 
   // Default build task
   grunt.registerTask('default', ['clean', 'copy', 'dist-css', 'dist-js']);
@@ -161,4 +189,7 @@ module.exports = function(grunt) {
   // CSS tasks
   grunt.registerTask('dist-css', ['less']);
   grunt.registerTask('dev-css', ['less', 'csslint']);
+
+  // Server task
+  grunt.registerTask('server', ['express', 'open', 'express-keepalive']);
 };

@@ -9,10 +9,8 @@
     <title>Skywalk</title>
 
     <!-- Common stylesheet for all devices -->
-    <link rel="stylesheet" href="./dist/stylesheets/skywalk.css">
+    <link rel="stylesheet" href="./dist/stylesheets/your_project_name.min.css">
 
-    <!-- // <script src="./bower_components/handlebars/dist/handlebars.runtime.js"></script> -->
-    <script src="./dist/javascripts/handlebars.js"></script>
     <!-- Place anything custom after this. -->
   </head>
 
@@ -20,59 +18,14 @@
 
     <!-- Body
     ================================================== -->
-    <div id="skywalkapp">
-
-    <div id="auth" class="layer layer-inverse">
-      <div id="auth-indicator" class="loading"></div>
-      <div id="auth-message" class="loading-message">Calling Dropbox to authenticate you...</div>
-    </div>
-
-    </div><!-- /skywalkapp -->
+    <div class="container">
+      <p>Basic HTML page</p>
+    </div><!-- /container -->
 
 
     <!-- Javascripts
     ================================================== -->
-     <script src="//www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
-    <script>window.Dropbox || document.write('<script src="dist/javascripts/dropbox-datastores-1.0-latest.js">\x3C/script>')</script>
 
-
-    <script src="dist/javascripts/yepnope.1.5.4-min.js" type="text/javascript"></script>
-
-    <script>
-      (function(window, document){
-
-        window.dropboxClient = new Dropbox.Client({
-          key: 'qyiormtv58xf75c'
-        })
-
-        dropboxClient.authenticate({ interactive: true }, function(error, client) {
-          if (!client.isAuthenticated()) {
-            // document.getElementById('auth-indicator').style.display = 'none'
-            document.getElementById('auth-message').innerHTML = "I'am sorry, but Skywalk couldn't authenticate you. Please, check your Internet connection."
-
-            // TODO: log this event
-          }
-          else {
-            client.getAccountInfo({}, function(error, accountInfo, parsedData) {
-              if (error) {
-                // Unable to get Account Info, probably no internet connection
-                document.getElementById('auth-message').innerHTML = "I'am sorry, but Skywalk couldn't authenticate you. Please, check your Internet connection."
-              }
-              else {
-                // Save Current user to App Context
-                window.dropboxClient['accountInfo'] = parsedData
-                // var authElement = document.getElementById('auth')
-                // authElement.parentElement.removeChild(authElement)
-
-                // Load Skywalk
-                yepnope('dist/javascripts/skywalk-compiled.js')
-              }
-            })
-          }
-        })
-
-      }(window, document, undefined))
-    </script>
 
   </body>
 </html>

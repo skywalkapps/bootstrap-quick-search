@@ -1,0 +1,29 @@
+//
+// Bootstrap Plugin: Quick Search
+// -----------------------------
+
+// Module local variables
+// f.e. @module-background: #fff;
+
+// Quick Search Field
+// [data-quick-search] {
+// }
+
+.form-action-clear {
+  display: none;
+  cursor: pointer;
+  pointer-events: all;
+
+  &:before {
+    color: @gray-light;
+  }
+
+  &:hover:before {
+    color: @text-color;
+  }
+
+  .has-feedback & {
+    display: block;
+  }
+}
+// TODO: Přidat křížek na zrušení filtrování

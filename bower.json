@@ -1,20 +1,18 @@
 {
-  "name": "your_project_name",
-  "description": "Starter template for quick front-end development.",
+  "name": "bower-quick-search",
+  "description": "Simple JS search plugin for Twitter Bootstrap.",
   "version": "0.1.0",
   "keywords": [
-    "css",
-    "js",
-    "less",
-    "starter",
+    "search",
     "bootstrap",
     "front-end",
-    "web"
+    "js"
   ],
   "dependencies": {
     "jquery": "~2.0.0",
-    "normalize-css": "latest",
-    "bootstrap": "~3.0.0",
-    "respondJS": "latest"
+    "bootstrap": "~3.3.0"
+  },
+  "devDependencies": {
+    "prism": "git@github.com:LeaVerou/prism.git#gh-pages"
   }
 }

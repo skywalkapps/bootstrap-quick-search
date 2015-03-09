@@ -6,26 +6,218 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skywalk</title>
+    <title>Bootstrap Quick Search Plugin</title>
 
     <!-- Common stylesheet for all devices -->
-    <link rel="stylesheet" href="./dist/stylesheets/your_project_name.min.css">
-
+    <link rel="stylesheet" href="./dist/stylesheets/bootstrap-quick-search.css">
+    <link rel="stylesheet" href="./vendor/prism/themes/prism-okaidia.css">
+    <script src="./vendor/prism/prism.js"></script>
     <!-- Place anything custom after this. -->
   </head>
 
-  <body>
+  <body class="mdocs-mw-horizontal">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-fixed-top navbar-default" id="top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".mw-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../" class="navbar-brand">Moonwalk</a>
+        </div>
+        <nav class="collapse navbar-collapse mw-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#introduction">Introduction</a>
+            </li>
+            <li>
+              <a href="#code">Code</a>
+            </li>
+            <li>
+              <a href="#examples">Example</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Source</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="mw-header" id="introduction">
+      <div class="container">
+
+        <div class="page-header">
+          <h1>Quick search plugin for Bootstrap</h1>
+        </div>
+
+        <p class="lead">Sometimes you need just simple JavaScript solution to search through tables or lists. Quick search plugin features simple, but powerful method of searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+
+        <a href="#TODO" class="btn btn-outline" role="button">
+          Download Quick Search
+        </a>
+
+        <p class="version">Current Version: 0.1</p>
+
+
+      </div><!-- /container -->
+
+    </div><!-- /mw-header -->
+
 
     <!-- Body
     ================================================== -->
     <div class="container">
-      <p>Basic HTML page</p>
+
+      <div class="mw-docs-section" id="code">
+        <h1 class="page-header">Code</h1>
+
+        <h3>Data attributes</h3>
+        <p>You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap's conventions and should be your first consideration when using a plugin.</p>
+
+        <p>Add <code>data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.
+
+        Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
+
+<pre>
+<code class="language-markup">
+&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search"></code></pre>
+
+        <h3>JavaScript</h3>
+        <p>You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
+
+<pre>
+<code class="language-javascript">
+$('.js-quick-search').quickSearch()</code></pre>
+
+
+        <p>This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
+
+
+      </div>
+
+      <div class="mw-docs-section" id="examples">
+        <h1 class="page-header">Example</h1>
+
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Table</h3>
+            <p>The more data you want to show, the more you need some way of filtering. This plugin features:</p>
+
+            <ul>
+              <li>Search any string within collection of elements.</li>
+              <li>Use multiple search fields, f.e. for each table column.</li>
+              <li>Clear search by "ESC" key or clear icon inside search field.</li>
+            </ul>
+          </div><!-- /col -->
+
+          <div class="col-md-9">
+
+            <div class="mw-example">
+              <div class="mw-panel">
+                <div class="form-group">
+                  <!-- data-input="quick-search" -->
+                  <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2">
+
+                  <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
+                </div>
+              </div>
+
+
+              <table id="searchable" class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Occupation</th>
+                    <th>Nationality</th>
+                    <th>Age</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Martin Freeman</td>
+                    <td>Actor</td>
+                    <td>United Kingdom</td>
+                    <td>32</td>
+                  </tr>
+
+                  <tr>
+                    <td>Dave Lister</td>
+                    <td>Technician</td>
+                    <td>American</td>
+                    <td>26</td>
+                  </tr>
+
+                  <tr>
+                    <td>Martin Staněk</td>
+                    <td>Webdesigner</td>
+                    <td>Czech Republic</td>
+                    <td>29</td>
+                  </tr>
+
+                  <tr>
+                    <td>Nikola Tesla</td>
+                    <td>Genius</td>
+                    <td>Austrian Empire</td>
+                    <td>87</td>
+                  </tr>
+
+                  <tr>
+                    <td>James Bond</td>
+                    <td>Ornithologist</td>
+                    <td>American</td>
+                    <td>89</td>
+                  </tr>
+
+                  <tr>
+                    <td>Richard Feynman</td>
+                    <td>Theoretical physics</td>
+                    <td>American</td>
+                    <td>69</td>
+                  </tr>
+                </tbody>
+              </table>
+
+<pre>
+<code class="language-markup">
+&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
+&lt;table id="searchable-table">
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>...&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>...&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code></pre>
+          </div><!-- /mw-example -->
+
+        </div><!-- /col -->
+      </div><!-- /row -->
+
+      <div class="mw-docs-section mw-footer">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <p>Quick Search plugin is part of Moonwalk App UI. Its purpose is to extend Twitter Bootstrap by useful components, which save you a lot of development time.</p>
+
+            <p>Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
+          </div>
+        </div>
+
+      </div><!-- /mw-docs-section -->
     </div><!-- /container -->
 
 
     <!-- Javascripts
     ================================================== -->
-
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./dist/javascripts/bootstrap-quick-search.js"></script>
 
   </body>
 </html>

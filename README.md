@@ -6,17 +6,6 @@ Sometimes you need just simple on-page JavaScript solution to search through lar
 
 To get started, check out <http://moonwalkapp.com/bootstrap-quick-search>!
 
-<!-- ## Table of contents
-
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Community](#community)
-- [Versioning](#versioning)
-- [Creators](#creators)
-- [Copyright and license](#copyright-and-license) -->
-
 ## Quick start
 
 Quick search plugin is built for Twitter Bootstrap 3. You have following options of installation:

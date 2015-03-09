@@ -90,19 +90,29 @@ module.exports = function(grunt) {
 
   // Builds LESS styles into CSS
   config.less = {
-    main: {
+    plugin: {
       files: {
-        'dist/stylesheets/<%= pkg.name %>.css': 'src/stylesheets/app.less'
+        'dist/stylesheets/<%= pkg.name %>.css': 'src/stylesheets/plugin.less'
       }
     },
 
-    mainCompressed: {
+    pluginCompressed: {
       options: {
         cleancss: true,
         report: 'min'
       },
       files: {
         'dist/stylesheets/<%= pkg.name %>.min.css': 'dist/stylesheets/<%= pkg.name %>.css'
+      }
+    },
+
+    docs: {
+      options: {
+        cleancss: true,
+        report: 'min'
+      },
+      files: {
+        'dist/stylesheets/docs.css': 'src/stylesheets/app.less'
       }
     }
   };

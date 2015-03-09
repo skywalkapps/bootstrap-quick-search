@@ -1,5 +1,6 @@
 # [Quick search plugin for Bootstrap](http://moonwalkapp.com/bootstrap-quick-search)
 ![Bower version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
 
 Sometimes you need just simple on-page JavaScript solution to search through large table or lists. Quick search plugin features simple method of searching pieces of text within any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.
 
@@ -24,32 +25,19 @@ Quick search plugin is built for Twitter Bootstrap 3. You have following options
 - Clone the repo: `git clone https://github.com/icoach/bootstrap-quick-search.git`.
 - Install with [Bower](http://bower.io): `bower install bootstrap-quick-search`.
 
-<!-- ### What's included
+### How to use
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+The plugin requires only two files to include in your project. Within the download you'll find minified and plain versions of JavaScript and CSS.
 
 ```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.css.map
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   ├── bootstrap-theme.css.map
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    ├── glyphicons-halflings-regular.woff
-    └── glyphicons-halflings-regular.woff2
+bootstrap-quick-search/
+├── dist/
+│   ├── bootstrap-quick-search.css
+│   ├── bootstrap-quick-search.min.css
+└── javascripts/
+    ├── bootstrap-quick-search.js
+    └── bootstrap-quick-search.min.js
 ```
-
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). CSS [source maps](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors) (`bootstrap.*.map`) are available for use with certain browsers' developer tools. Fonts from Glyphicons are included, as is the optional Bootstrap theme.
- -->
 
 ## Creator
 

@@ -2,7 +2,7 @@
  * Quick Search: bootstrap-quick-search.js v0.1.0
  * ========================================================================
  * Copyright 2015 Martin Stanek, Twitter: @koucik, Github: @icoach
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/icoach/bootstrap-quick-search/blob/master/LICENSE)
  * ======================================================================== */
 
 
@@ -91,7 +91,6 @@
   // APPLY TO STANDARD DROPDOWN ELEMENTS
   // ===================================
 
-  // $('[data-quick-search]').quickSearch()
   $(document)
     .on('click.bs.quickSearch.data-api', QuickSearch.DEFAULTS.clearSelector, QuickSearch.DEFAULTS, QuickSearch.prototype.clear)
     .on('input.bs.quickSearch.data-api', quickSearchElement, QuickSearch.DEFAULTS, QuickSearch.prototype.search)

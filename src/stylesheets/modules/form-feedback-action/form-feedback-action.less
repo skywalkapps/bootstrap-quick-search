@@ -1,0 +1,27 @@
+//
+// TWITTER BOOTSTRAP PLUGIN: Form feedback action 
+// This module extends form control feedback with actions
+
+// @author: Martin Staněk (https://github.com/icoach)
+// @extends: .form-control-feedback
+// @bootstrap: 3.2
+// -----------------------------
+
+// Form feedback action definition
+.form-action-clear {
+  display: none;
+  cursor: pointer;
+  pointer-events: all; // so it can be clicked
+
+  &:before {
+    color: @feedback-action-color;
+  }
+
+  &:hover:before {
+    color: @feedback-action-hover-color;
+  }
+
+  .has-feedback & {
+    display: block;
+  }
+}

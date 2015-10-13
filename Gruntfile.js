@@ -16,24 +16,32 @@ module.exports = function(grunt) {
               '*/\n'
   };
 
+
   // Clean task, removes all files and folders in /dist.
   config.clean = {
-    build: ['dist']
+    dist: ['dist'],
+    docs: ['docs']
   };
 
+
+  // Copies all necessary files to the distribution folder
   config.copy = {
-    js: {
-      files: [
-        { expand: true, cwd: 'bower_components/jquery/', src: ['jquery.min.js'], dest: 'src/javascripts/lib/jquery', filter: 'isFile' }
-      ]
-    },
     assets: {
       files: [
-        { expand: true, cwd: 'src/assets', src: ['**'], dest: 'dist/assets' },
-        { expand: true, cwd: 'bower_components/bootstrap/fonts', src: ['*'], dest: 'src/assets/fonts' }
+        { expand: true, cwd: 'vendor/bootstrap/fonts', src: ['*'], dest: 'src/assets/fonts' },
+        { expand: true, cwd: 'src/assets', src: ['**'], dest: 'docs/assets' }
       ]
     },
+    docs: {
+      files: [
+        { expand: true, cwd: 'src', src: ['index.html'], dest: 'docs' },
+        { expand: true, cwd: 'vendor/prism', src: ['prism.js'], dest: 'docs/vendor/prism' },
+        { expand: true, cwd: 'vendor/bootstrap/dist/js', src: ['bootstrap.min.js'], dest: 'docs/vendor/bootstrap' },
+        { expand: true, cwd: 'vendor/prism/themes', src: ['prism-okaidia.css'], dest: 'docs/vendor/prism' }
+      ]
+    }
   };
+
 
   // Reads the projects .jshintrc file and applies coding standards.
   config.jshint = {
@@ -51,11 +59,16 @@ module.exports = function(grunt) {
     }
   };
 
+
   // Simple concat
   config.concat = {
     dist: {
       src: ['src/javascripts/bootstrap-quick-search.js'],
       dest: 'dist/javascripts/<%= pkg.name %>.js',
+    },
+    docs: {
+      src: ['src/javascripts/bootstrap-quick-search.js'],
+      dest: 'docs/javascripts/<%= pkg.name %>.js',
     }
   };
 
@@ -90,29 +103,21 @@ module.exports = function(grunt) {
 
   // Builds LESS styles into CSS
   config.less = {
-    plugin: {
+    dev: {
       files: {
-        'dist/stylesheets/<%= pkg.name %>.css': 'src/stylesheets/plugin.less'
+        'dist/stylesheets/<%= pkg.name %>.css': 'src/stylesheets/index.less',
+        'docs/stylesheets/docs.css': 'src/stylesheets/docs.less'
       }
     },
 
-    pluginCompressed: {
+    dist: {
       options: {
         cleancss: true,
         report: 'min'
       },
       files: {
-        'dist/stylesheets/<%= pkg.name %>.min.css': 'dist/stylesheets/<%= pkg.name %>.css'
-      }
-    },
-
-    docs: {
-      options: {
-        cleancss: true,
-        report: 'min'
-      },
-      files: {
-        'dist/stylesheets/docs.css': 'src/stylesheets/app.less'
+        'dist/stylesheets/<%= pkg.name %>.min.css': 'dist/stylesheets/<%= pkg.name %>.css',
+        'dist/stylesheets/docs.min.css': 'dist/stylesheets/docs.css'
       }
     }
   };
@@ -163,6 +168,10 @@ module.exports = function(grunt) {
     js: {
       files: 'src/javascripts/**/*.js',
       tasks: ['concat']
+    },
+    docs: {
+      files: 'src/*.html',
+      tasks: ['copy:docs']
     }
   };
 
@@ -174,11 +183,14 @@ module.exports = function(grunt) {
   // -------------------------
 
   // Default build task
-  grunt.registerTask('default', ['clean', 'copy', 'dist-css', 'dist-js']);
+  grunt.registerTask('default', ['clean:dist', 'dist-css', 'dist-js']);
+
+  // Documentation build task
+  grunt.registerTask('docs', ['clean:docs', 'copy', 'less:dev', 'concat:docs']);
 
   // JS tasks
-  grunt.registerTask('dist-js', ['neuter', 'uglify', 'compress']);
-  grunt.registerTask('dev-js', ['neuter', 'jshint']);
+  grunt.registerTask('dist-js', ['concat', 'uglify', 'compress']);
+  grunt.registerTask('dev-js', ['concat', 'jshint']);
 
   // CSS tasks
   grunt.registerTask('dist-css', ['less']);

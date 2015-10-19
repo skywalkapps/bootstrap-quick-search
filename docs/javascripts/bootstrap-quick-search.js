@@ -26,11 +26,13 @@
 
   QuickSearch.VERSION = '0.1'
 
+
   QuickSearch.prototype.search = function (e) {
     var self = $(e.target)
-    var itemsSelector = self.data('search-target');
+    var itemsSelector = self.data('search-target')
     var val = self.val().toLowerCase()
 
+    // Indicate that input search input is filled
     if (val.length > 0) self.parent().addClass(e.data.activeClass)
 
     $(itemsSelector).each(function(){
@@ -42,8 +44,10 @@
       else {
         $(this).addClass('hidden')
       }
-    });
+    })
+
   }
+
 
   QuickSearch.prototype.clear = function (e) {
     var input = $(e.target).prev()
@@ -68,7 +72,6 @@
 
   $.fn.quickSearch = function (option) {
     return this.each(function () {
-      debugger
       var self = $(this),
           options = $.extend({}, QuickSearch.DEFAULTS, self.data(), typeof option == 'object' && option),
           data = self.data('quickSearch');
@@ -88,7 +91,7 @@
     return this
   }
 
-  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // APPLY TO STANDARD QUICK SEARCH ELEMENTS
   // ===================================
 
   $(document)

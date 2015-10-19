@@ -10,8 +10,8 @@
 
     <!-- Common stylesheet for all devices -->
     <link rel="stylesheet" href="./stylesheets/docs.css">
-    <link rel="stylesheet" href="./vendor/prism/prism-okaidia.css">
-    <script src="./vendor/prism/prism.js"></script>
+    <link rel="stylesheet" href="./libs/prism/prism-okaidia.css">
+    <script src="./libs/prism/prism.js"></script>
     <!-- Place anything custom after this. -->
   </head>
 
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="../" class="navbar-brand">Moonwalk</a>
+          <a href="../" class="navbar-brand">Skywalk <small>plugins</small></a>
         </div>
         <nav class="collapse navbar-collapse mw-navbar-collapse">
           <ul class="nav navbar-nav">
@@ -42,7 +42,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Source</a></li>
+            <li><a href="https://github.com/skywalkplugins/bootstrap-quick-search">Github</a></li>
           </ul>
         </nav>
       </div>
@@ -83,16 +83,12 @@
 
         Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
 
-<pre>
-<code class="language-markup">
-&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search"></code></pre>
+<pre><code class="language-markup">&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search"></code></pre>
 
         <h3>JavaScript</h3>
         <p>You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
 
-<pre>
-<code class="language-javascript">
-$('.js-quick-search').quickSearch()</code></pre>
+<pre><code class="language-javascript">$('.js-quick-search').quickSearch()</code></pre>
 
 
         <p>This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
@@ -121,7 +117,7 @@ $('.js-quick-search').quickSearch()</code></pre>
               <div class="mw-panel">
                 <div class="form-group">
                   <!-- data-input="quick-search" -->
-                  <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2">
+                  <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword...">
 
                   <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
                 </div>
@@ -182,15 +178,28 @@ $('.js-quick-search').quickSearch()</code></pre>
                 </tbody>
               </table>
 
-<pre>
-<code class="language-markup">
-&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
+
+
+<pre><code class="language-markup">&lt;div class="form-group">
+  &lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
+  &lt;span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true">&lt;/span>
+&lt;/div>
+
 &lt;table id="searchable-table">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Name&lt;/th>
+      &lt;th>Occupation&lt;/th>
+      &lt;th>Nationality&lt;/th>
+      &lt;th>Age&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+
   &lt;tbody>
     &lt;tr>
       &lt;td>...&lt;/td>
-    &lt;/tr>
-    &lt;tr>
+      &lt;td>...&lt;/td>
+      &lt;td>...&lt;/td>
       &lt;td>...&lt;/td>
     &lt;/tr>
   &lt;/tbody>
@@ -200,10 +209,80 @@ $('.js-quick-search').quickSearch()</code></pre>
         </div><!-- /col -->
       </div><!-- /row -->
 
+      <div class="row">
+          <div class="col-md-3">
+            <h3>List</h3>
+            <p>For any longer list, f.e. list of available filters, it is quite handy to have some ad hoc filtering available.</p>
+
+            <ul>
+              <li>Search any string within collection of elements.</li>
+              <li>Clear search by "ESC" key or clear icon inside search field.</li>
+            </ul>
+          </div><!-- /col -->
+
+          <div class="col-md-9">
+
+            <div class="mw-example">
+              <div class="form-group">
+                <input class="form-control" data-input="quick-search" data-search-target="#searchable-list > .list-group-item" placeholder="search for list..." name="quick-search-3">
+
+                <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
+              </div>
+              <ul class="list-group" id="searchable-list">
+                <li class="list-group-item">
+                  <span class="badge">14</span>
+                  <a href="#">My open tasks</a>
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">3</span>
+                  <a href="#">Reported by me</a>
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">1</span>
+                  <a href="#">Recently viewed items</a>
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">12</span>
+                  <a href="#">Current sprint</a>
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">3</span>
+                  <a href="#">Resolved this week</a>
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">40</span>
+                  <a href="#">High priority tasks</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">Release 1 - 2015/01</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">Release 2 - 2015/02</a>
+                </li>
+              </ul>
+
+<pre><code class="language-markup">&lt;div class="form-group">
+  &lt;input data-input="quick-search" data-search-target="#searchable-list > .list-group-item" name="quick-search">
+  &lt;span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true">&lt;/span>
+&lt;/div>
+
+&lt;ul class="list-group" id="searchable-table">
+  &lt;li class="list-group-item">
+    &lt;span class="badge">1&lt;/span>
+      ...
+  &lt;/li>
+&lt;/ul></code></pre>
+          
+          </div><!-- /mw-example -->
+
+
+        </div><!-- /col -->
+      </div><!-- /row -->
+
       <div class="mw-docs-section mw-footer">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <p>Quick Search plugin is part of Moonwalk App UI. Its purpose is to extend Twitter Bootstrap by useful components, which save you a lot of development time.</p>
+            <p>Quick Search plugin is part of Skywalk plugins, which are meant to extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
 
             <p>Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
           </div>
@@ -216,7 +295,7 @@ $('.js-quick-search').quickSearch()</code></pre>
     <!-- Javascripts
     ================================================== -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="./vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="./libs/bootstrap/bootstrap.min.js"></script>
     <script src="./javascripts/bootstrap-quick-search.js"></script>
 
   </body>

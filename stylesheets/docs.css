@@ -6920,6 +6920,7 @@ h4,
   font-weight: 500;
 }
 .btn-outline:active,
+.btn-outline:focus,
 .btn-outline:hover {
   background: #00b593;
   border-color: #00b593;
@@ -6986,6 +6987,10 @@ pre > code {
 .navbar-default .navbar-brand {
   margin-right: 30px;
   color: #fff;
+}
+.navbar-brand small {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 .btn {
   -webkit-transition: all .2s cubic-bezier(0.250, 0.250, 0.750, 0.750);

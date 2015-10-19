@@ -175,6 +175,12 @@ module.exports = function(grunt) {
     }
   };
 
+  config.shell = {
+    target: {
+      command: 'sh ./grunt/gh-pages.sh'
+    }
+  };
+
   // Project configuration
   grunt.initConfig(config);
 
@@ -186,7 +192,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean:dist', 'dist-css', 'dist-js']);
 
   // Documentation build task
-  grunt.registerTask('docs', ['clean:docs', 'copy', 'less:dev', 'concat:docs']);
+  grunt.registerTask('docs', ['clean:docs', 'copy', 'less:dev', 'concat:docs', 'shell']);
 
   // JS tasks
   grunt.registerTask('dist-js', ['concat', 'uglify', 'compress']);

@@ -51,23 +51,28 @@
     <div class="mw-header" id="introduction">
       <div class="container">
 
-        <div class="page-header">
-          <h1>Quick search plugin for Bootstrap</h1>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="page-header">
+              <h1>Quick search for Bootstrap</h1>
+            </div>
+
+            <p class="lead">Simple library for searching any collection of elements. Compatible with Twitter Bootstrap 3.</p>
+
+            <p>Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+
+            <a href="https://github.com/skywalkplugins/bootstrap-quick-search/archive/master.zip" class="btn btn-outline" role="button">
+              Download Quick Search
+            </a>
+
+            <p class="version">Current Version: 0.1</p>
+          </div>
         </div>
-
-        <p class="lead">Sometimes you need just simple JavaScript solution to search through tables or lists. Quick search plugin features simple, but powerful method of searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
-
-        <a href="https://github.com/skywalkplugins/bootstrap-quick-search/archive/master.zip" class="btn btn-outline" role="button">
-          Download Quick Search
-        </a>
-
-        <p class="version">Current Version: 0.1</p>
-
 
       </div><!-- /container -->
 
     </div><!-- /mw-header -->
-
 
     <!-- Body
     ================================================== -->
@@ -104,11 +109,6 @@
             <h3>Table</h3>
             <p>The more data you want to show, the more you need some way of filtering. This plugin features:</p>
 
-            <ul>
-              <li>Search any string within collection of elements.</li>
-              <li>Use multiple search fields, f.e. for each table column.</li>
-              <li>Clear search by "ESC" key or clear icon inside search field.</li>
-            </ul>
           </div><!-- /col -->
 
           <div class="col-md-9">
@@ -223,7 +223,80 @@
           <div class="col-md-9">
 
             <div class="mw-example">
-              <div class="form-group">
+
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  List of U.S. states
+                  <span class="caret"></span>
+                </button>
+
+                
+                <div class="dropdown-container">
+
+                  <div class="dropdown-toolbar">
+                    <div class="form-group">
+                      <input class="form-control" data-input="quick-search" data-search-target="#searchable-menu > li" placeholder="search for keyword..." name="quick-search-2" autofocus>
+
+                      <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
+                    </div>
+                  </div><!-- /dropdown-toolbar -->
+
+                  <ul id="searchable-menu" class="dropdown-menu dropdown-scrollable">
+                    <li><a href="#">Alabama</a></li>
+                    <li><a href="#">Alaska</a></li>
+                    <li><a href="#">Arizona</a></li>
+                    <li><a href="#">Arkansas</a></li>
+                    <li><a href="#">California</a></li>
+                    <li><a href="#">Colorado</a></li>
+                    <li><a href="#">Connecticut</a></li>
+                    <li><a href="#">Delaware</a></li>
+                    <li><a href="#">Florida</a></li>
+                    <li><a href="#">Georgia</a></li>
+                    <li><a href="#">Hawaii</a></li>
+                    <li><a href="#">Idaho</a></li>
+                    <li><a href="#">Illinois</a></li>
+                    <li><a href="#">Indiana</a></li>
+                    <li><a href="#">Iowa</a></li>
+                    <li><a href="#">Kansas</a></li>
+                    <li><a href="#">Kentucky</a></li>
+                    <li><a href="#">Louisiana</a></li>
+                    <li><a href="#">Maine</a></li>
+                    <li><a href="#">Maryland</a></li>
+                    <li><a href="#">Massachusetts</a></li>
+                    <li><a href="#">Michigan</a></li>
+                    <li><a href="#">Minnesota</a></li>
+                    <li><a href="#">Mississippi</a></li>
+                    <li><a href="#">Missouri</a></li>
+                    <li><a href="#">Montana</a></li>
+                    <li><a href="#">Nebraska</a></li>
+                    <li><a href="#">Nevada</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">North</a></li>
+                    <li><a href="#">North</a></li>
+                    <li><a href="#">Ohio</a></li>
+                    <li><a href="#">Oklahoma</a></li>
+                    <li><a href="#">Oregon</a></li>
+                    <li><a href="#">Pennsylvania</a></li>
+                    <li><a href="#">Rhode</a></li>
+                    <li><a href="#">South</a></li>
+                    <li><a href="#">South</a></li>
+                    <li><a href="#">Tennessee</a></li>
+                    <li><a href="#">Texas</a></li>
+                    <li><a href="#">Utah</a></li>
+                    <li><a href="#">Vermont</a></li>
+                    <li><a href="#">Virginia</a></li>
+                    <li><a href="#">Washington</a></li>
+                    <li><a href="#">West</a></li>
+                    <li><a href="#">Wisconsin</a></li>
+                    <li><a href="#">Wyoming</a></li>
+                  </ul>
+                </div><!-- /dropdown-container -->
+              </div><!-- /dropdown -->
+              
+              <!-- <div class="form-group">
                 <input class="form-control" data-input="quick-search" data-search-target="#searchable-list > .list-group-item" placeholder="search for list..." name="quick-search-3">
 
                 <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
@@ -260,7 +333,7 @@
                   <a href="#">Release 2 - 2015/02</a>
                 </li>
               </ul>
-
+ -->
 <pre><code class="language-markup">&lt;div class="form-group">
   &lt;input data-input="quick-search" data-search-target="#searchable-list > .list-group-item" name="quick-search">
   &lt;span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true">&lt;/span>
@@ -282,7 +355,7 @@
       <div class="mw-docs-section mw-footer">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <p>Quick Search plugin is part of Skywalk plugins, which are meant to extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
+            <p>Quick Search plugin is part of Skywalk plugins, which extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
 
             <p>Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
           </div>

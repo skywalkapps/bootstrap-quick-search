@@ -52,6 +52,9 @@
   QuickSearch.prototype.clear = function (e) {
     var input = $(e.target).prev()
 
+    // Stop event propagation (input can be inside dropdown etc.) 
+    e.stopPropagation()
+
     // Reset
     if (e.keyCode == 27) input = $(e.target)
 

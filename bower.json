@@ -9,7 +9,8 @@
     "js"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.0"
+    "bootstrap": "~3.3.0",
+    "bootstrap-dropmenu": "https://github.com/skywalkplugins/bootstrap-dropmenu.git"
   },
   "devDependencies": {
     "prism": "git@github.com:LeaVerou/prism.git#gh-pages"

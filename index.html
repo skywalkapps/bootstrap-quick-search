@@ -5,23 +5,30 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Quick Search Plugin</title>
+    <meta name="description" content="Boostrap Quick Search makes Twitter Bootstrap even more powerfull.">
+    <meta name="keywords" content="HTML, CSS, bootstrap, front-end, frontend, plugin, module">
+    <meta name="author" content="Martin Staněk">
+
+    <title>Skywalk plugins | Bootstrap Quick Search</title>
+
+    <link rel="icon" href="./assets/images/favicon.ico">
 
     <!-- Common stylesheet for all devices -->
     <link rel="stylesheet" href="./stylesheets/docs.css">
-    <link rel="stylesheet" href="./libs/prism/prism-okaidia.css">
+    <link rel="stylesheet" href="./libs/prism/prism.css">
     <script src="./libs/prism/prism.js"></script>
     <!-- Place anything custom after this. -->
   </head>
 
-  <body class="mdocs-mw-horizontal">
+  <body>
     <a class="sr-only" href="#content">Skip to main content</a>
 
     <header class="navbar navbar-fixed-top navbar-default" id="top" role="banner">
       <div class="container">
         <div class="navbar-header">
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".mw-navbar-collapse">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".sw-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -29,7 +36,7 @@
           </button>
           <a href="../" class="navbar-brand">Skywalk <small>plugins</small></a>
         </div>
-        <nav class="collapse navbar-collapse mw-navbar-collapse">
+        <nav class="collapse navbar-collapse sw-navbar-collapse">
           <ul class="nav navbar-nav">
             <li>
               <a href="#introduction">Introduction</a>
@@ -48,73 +55,73 @@
       </div>
     </header>
 
-    <div class="mw-header" id="introduction">
+    <div class="sw-header" id="introduction">
       <div class="container">
 
         <div class="row">
           <div class="col-md-6">
 
             <div class="page-header">
-              <h1>Quick search for Bootstrap</h1>
+              <h1 class="f-custom">Quick search for Bootstrap</h1>
             </div>
 
             <p class="lead">Simple library for searching any collection of elements. Compatible with Twitter Bootstrap 3.</p>
 
-            <p>Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+            <p class="sw-text">Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
 
             <a href="https://github.com/skywalkplugins/bootstrap-quick-search/archive/master.zip" class="btn btn-outline" role="button">
               Download Quick Search
             </a>
 
-            <p class="version">Current Version: 0.1</p>
+            <p class="sw-text version">Current Version: 0.1</p>
           </div>
         </div>
 
       </div><!-- /container -->
 
-    </div><!-- /mw-header -->
+    </div><!-- /sw-header -->
 
     <!-- Body
     ================================================== -->
     <div class="container">
 
-      <div class="mw-docs-section" id="code">
-        <h1 class="page-header">Code</h1>
+      <div class="sw-section" id="code">
+        <h1 class="f-custom page-header">Code</h1>
 
-        <h3>Data attributes</h3>
-        <p>You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap's conventions and should be your first consideration when using a plugin.</p>
+        <h3 class="f-custom-medium">Data attributes</h3>
+        <p class="sw-text">You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap's conventions and should be your first consideration when using a plugin.</p>
 
-        <p>Add <code>data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.
+        <p class="sw-text">Add <code>data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.
 
-        Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
+        <p class="sw-text">Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
 
 <pre><code class="language-markup">&lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search"></code></pre>
 
-        <h3>JavaScript</h3>
-        <p>You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
+        <h3 class="f-custom-medium">JavaScript</h3>
+        <p class="sw-text">You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
 
 <pre><code class="language-javascript">$('.js-quick-search').quickSearch()</code></pre>
 
 
-        <p>This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
+        <p class="sw-text">This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
 
 
       </div>
 
-      <div class="mw-docs-section" id="examples">
+      <div class="sw-section" id="examples">
         <h1 class="page-header">Example</h1>
 
         <div class="row">
           <div class="col-md-3">
-            <h3>Table</h3>
-            <p>The more data you want to show, the more you need some way of filtering. This plugin features:</p>
+            <h3 class="f-custom-medium">Table</h3>
+            <p class="sw-text">The more data you want to show, the more you need some way of filtering. This plugin features:</p>
 
           </div><!-- /col -->
 
           <div class="col-md-9">
 
-            <div class="mw-example">
-              <div class="mw-panel">
+            <div class="sw-example">
+              <div class="sw-panel">
                 <div class="form-group">
                   <!-- data-input="quick-search" -->
                   <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword...">
@@ -122,7 +129,6 @@
                   <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
                 </div>
               </div>
-
 
               <table id="searchable" class="table">
                 <thead>
@@ -178,7 +184,7 @@
                 </tbody>
               </table>
 
-
+          </div><!-- /sw-example -->
 
 <pre><code class="language-markup">&lt;div class="form-group">
   &lt;input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
@@ -204,164 +210,21 @@
     &lt;/tr>
   &lt;/tbody>
 &lt;/table></code></pre>
-          </div><!-- /mw-example -->
 
         </div><!-- /col -->
       </div><!-- /row -->
 
-      <div class="row">
-          <div class="col-md-3">
-            <h3>List</h3>
-            <p>For any longer list, f.e. list of available filters, it is quite handy to have some ad hoc filtering available.</p>
 
-            <ul>
-              <li>Search any string within collection of elements.</li>
-              <li>Clear search by "ESC" key or clear icon inside search field.</li>
-            </ul>
-          </div><!-- /col -->
-
-          <div class="col-md-9">
-
-            <div class="mw-example">
-
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  List of U.S. states
-                  <span class="caret"></span>
-                </button>
-
-                
-                <div class="dropdown-container">
-
-                  <div class="dropdown-toolbar">
-                    <div class="form-group">
-                      <input class="form-control" data-input="quick-search" data-search-target="#searchable-menu > li" placeholder="search for keyword..." name="quick-search-2" autofocus>
-
-                      <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
-                    </div>
-                  </div><!-- /dropdown-toolbar -->
-
-                  <ul id="searchable-menu" class="dropdown-menu dropdown-scrollable">
-                    <li><a href="#">Alabama</a></li>
-                    <li><a href="#">Alaska</a></li>
-                    <li><a href="#">Arizona</a></li>
-                    <li><a href="#">Arkansas</a></li>
-                    <li><a href="#">California</a></li>
-                    <li><a href="#">Colorado</a></li>
-                    <li><a href="#">Connecticut</a></li>
-                    <li><a href="#">Delaware</a></li>
-                    <li><a href="#">Florida</a></li>
-                    <li><a href="#">Georgia</a></li>
-                    <li><a href="#">Hawaii</a></li>
-                    <li><a href="#">Idaho</a></li>
-                    <li><a href="#">Illinois</a></li>
-                    <li><a href="#">Indiana</a></li>
-                    <li><a href="#">Iowa</a></li>
-                    <li><a href="#">Kansas</a></li>
-                    <li><a href="#">Kentucky</a></li>
-                    <li><a href="#">Louisiana</a></li>
-                    <li><a href="#">Maine</a></li>
-                    <li><a href="#">Maryland</a></li>
-                    <li><a href="#">Massachusetts</a></li>
-                    <li><a href="#">Michigan</a></li>
-                    <li><a href="#">Minnesota</a></li>
-                    <li><a href="#">Mississippi</a></li>
-                    <li><a href="#">Missouri</a></li>
-                    <li><a href="#">Montana</a></li>
-                    <li><a href="#">Nebraska</a></li>
-                    <li><a href="#">Nevada</a></li>
-                    <li><a href="#">New</a></li>
-                    <li><a href="#">New</a></li>
-                    <li><a href="#">New</a></li>
-                    <li><a href="#">New</a></li>
-                    <li><a href="#">North</a></li>
-                    <li><a href="#">North</a></li>
-                    <li><a href="#">Ohio</a></li>
-                    <li><a href="#">Oklahoma</a></li>
-                    <li><a href="#">Oregon</a></li>
-                    <li><a href="#">Pennsylvania</a></li>
-                    <li><a href="#">Rhode</a></li>
-                    <li><a href="#">South</a></li>
-                    <li><a href="#">South</a></li>
-                    <li><a href="#">Tennessee</a></li>
-                    <li><a href="#">Texas</a></li>
-                    <li><a href="#">Utah</a></li>
-                    <li><a href="#">Vermont</a></li>
-                    <li><a href="#">Virginia</a></li>
-                    <li><a href="#">Washington</a></li>
-                    <li><a href="#">West</a></li>
-                    <li><a href="#">Wisconsin</a></li>
-                    <li><a href="#">Wyoming</a></li>
-                  </ul>
-                </div><!-- /dropdown-container -->
-              </div><!-- /dropdown -->
-              
-              <!-- <div class="form-group">
-                <input class="form-control" data-input="quick-search" data-search-target="#searchable-list > .list-group-item" placeholder="search for list..." name="quick-search-3">
-
-                <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
-              </div>
-              <ul class="list-group" id="searchable-list">
-                <li class="list-group-item">
-                  <span class="badge">14</span>
-                  <a href="#">My open tasks</a>
-                </li>
-                <li class="list-group-item">
-                  <span class="badge">3</span>
-                  <a href="#">Reported by me</a>
-                </li>
-                <li class="list-group-item">
-                  <span class="badge">1</span>
-                  <a href="#">Recently viewed items</a>
-                </li>
-                <li class="list-group-item">
-                  <span class="badge">12</span>
-                  <a href="#">Current sprint</a>
-                </li>
-                <li class="list-group-item">
-                  <span class="badge">3</span>
-                  <a href="#">Resolved this week</a>
-                </li>
-                <li class="list-group-item">
-                  <span class="badge">40</span>
-                  <a href="#">High priority tasks</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">Release 1 - 2015/01</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">Release 2 - 2015/02</a>
-                </li>
-              </ul>
- -->
-<pre><code class="language-markup">&lt;div class="form-group">
-  &lt;input data-input="quick-search" data-search-target="#searchable-list > .list-group-item" name="quick-search">
-  &lt;span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true">&lt;/span>
-&lt;/div>
-
-&lt;ul class="list-group" id="searchable-table">
-  &lt;li class="list-group-item">
-    &lt;span class="badge">1&lt;/span>
-      ...
-  &lt;/li>
-&lt;/ul></code></pre>
-          
-          </div><!-- /mw-example -->
-
-
-        </div><!-- /col -->
-      </div><!-- /row -->
-
-      <div class="mw-docs-section mw-footer">
+      <div class="sw-section sw-footer">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <p>Quick Search plugin is part of Skywalk plugins, which extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
+            <p class="sw-text">Quick Search is part of Skywalk plugins, which extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
 
-            <p>Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
+            <p class="sw-text">Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
           </div>
         </div>
 
-      </div><!-- /mw-docs-section -->
+      </div><!-- /sw-section -->
     </div><!-- /container -->
 
 

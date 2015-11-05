@@ -1,3 +1,4 @@
+@icon-font-path:          "../assets/fonts/";
 
 @font-face {
   font-family: 'Gibson-Light';
@@ -44,34 +45,37 @@
 }
 
 body {
-  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: @font-size-base;
-  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
-p {
-  font-size: @font-size-base;
+.sw-text  {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .lead {
   .f-custom;
 }
 
-h1 {
-  .f-custom;
+b, strong {
+  .f-custom-medium;
 }
+
+// h1 {
+//   .f-custom;
+// }
 
 h2 {
-  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-size: 24px;
+//   font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   font-weight: 500;
 }
 
-h3,
-h4 {
-  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+h3 {
+//   font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   font-weight: 500;
 }
 
 h1,
@@ -96,4 +100,8 @@ h4,
 .h4 {
   font-size: @font-size-base;
   line-height: 1.5;
+}
+
+.navbar {
+  .f-custom;
 }

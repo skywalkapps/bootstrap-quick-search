@@ -164,15 +164,15 @@ module.exports = function(grunt) {
     },
     styles: {
       files: ['src/stylesheets/**/*.less'],
-      tasks: ['less']
+      tasks: ['less:dev']
     },
     js: {
       files: 'src/javascripts/**/*.js',
-      tasks: ['concat']
+      tasks: ['concat:docs']
     },
     docs: {
-      files: 'src/*.html',
-      tasks: ['copy:docs']
+      files: 'src/docs/**/*',
+      tasks: ['jekyll']
     }
   };
 
@@ -182,6 +182,13 @@ module.exports = function(grunt) {
     }
   };
 
+  config.jekyll = {
+    options: {
+      config: '_config.yml'
+    },
+    build: {}
+  };
+  
   // Project configuration
   grunt.initConfig(config);
 

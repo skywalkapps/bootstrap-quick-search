@@ -1577,17 +1577,17 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 650px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 870px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1050px;
   }
 }
 .container-fluid {
@@ -6764,87 +6764,6 @@ button.close {
     display: none !important;
   }
 }
-@font-face {
-  font-family: 'Gibson-Light';
-  src: url('../assets/fonts/gibson/26F6B3_0_0.eot');
-  src: url('../assets/fonts/26F6B3_0_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_0_0.woff') format('woff'), url('../assets/fonts//26F6B3_0_0.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Gibson-Bold';
-  src: url('../assets/fonts/gibson/26F6B3_4_0.eot');
-  src: url('../assets/fonts/26F6B3_4_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_4_0.woff') format('woff'), url('../assets/fonts//26F6B3_4_0.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url('../assets/fonts/gibson/26F6B3_5_0.eot');
-  src: url('../assets/fonts/gibson/26F6B3_5_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_5_0.woff') format('woff'), url('../assets/fonts//26F6B3_5_0.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url('../assets/fonts/gibson/26F6B3_6_0.eot');
-  src: url('../assets/fonts/gibson/26F6B3_6_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_6_0.woff') format('woff'), url('../assets/fonts//26F6B3_6_0.ttf') format('truetype');
-}
-.f-custom {
-  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-.f-custom-light {
-  font-family: "Gibson-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-}
-.f-custom-medium {
-  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-}
-.f-custom-bold {
-  font-family: "Gibson-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-}
-body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-.sw-text {
-  font-size: 18px;
-  font-weight: 400;
-  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.lead {
-  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-b,
-strong {
-  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-}
-h2 {
-  font-size: 24px;
-}
-h1,
-.h1 {
-  font-size: 36px;
-  line-height: 1.25;
-}
-h2,
-.h2 {
-  font-size: 24px;
-  line-height: 1.25;
-}
-h3,
-.h3 {
-  font-size: 20px;
-  line-height: 1.5;
-}
-h4,
-.h4 {
-  font-size: 14px;
-  line-height: 1.5;
-}
-.navbar {
-  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
 .sw-header {
   width: 100%;
   background-image: url('../assets/images/intro-bg.jpg');
@@ -6852,8 +6771,8 @@ h4,
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .sw-header p {
   color: #fff;
@@ -6923,6 +6842,22 @@ h4,
 }
 .navbar-brand {
   font-size: 24px;
+}
+.navbar-nav > li > .btn-group {
+  padding: 8px 15px;
+}
+.btn-primary {
+  background-color: #00b593;
+  border-color: #00b593;
+  border-radius: 2px;
+  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  background: #00826a;
+  border-color: #00826a;
 }
 .btn-outline {
   font-size: 16px;
@@ -7047,6 +6982,102 @@ h4,
 }
 td.col-actions {
   width: 44px;
+}
+@font-face {
+  font-family: 'Gibson-Light';
+  src: url('../assets/fonts/gibson/26F6B3_0_0.eot');
+  src: url('../assets/fonts/26F6B3_0_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_0_0.woff') format('woff'), url('../assets/fonts//26F6B3_0_0.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gibson-Bold';
+  src: url('../assets/fonts/gibson/26F6B3_4_0.eot');
+  src: url('../assets/fonts/26F6B3_4_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_4_0.woff') format('woff'), url('../assets/fonts//26F6B3_4_0.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gibson-Regular';
+  src: url('../assets/fonts/gibson/26F6B3_5_0.eot');
+  src: url('../assets/fonts/gibson/26F6B3_5_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_5_0.woff') format('woff'), url('../assets/fonts//26F6B3_5_0.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gibson-SemiBold';
+  src: url('../assets/fonts/gibson/26F6B3_6_0.eot');
+  src: url('../assets/fonts/gibson/26F6B3_6_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/gibson/26F6B3_6_0.woff') format('woff'), url('../assets/fonts//26F6B3_6_0.ttf') format('truetype');
+}
+.f-custom {
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.f-custom-light {
+  font-family: "Gibson-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+.f-custom-medium {
+  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+.f-custom-bold {
+  font-family: "Gibson-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.lead {
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+b,
+strong {
+  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+h2 {
+  font-size: 24px;
+}
+h1,
+.h1 {
+  font-size: 36px;
+  line-height: 1.25;
+}
+h2,
+.h2 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+h3,
+.h3 {
+  font-size: 20px;
+  line-height: 1.5;
+}
+h4,
+.h4 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.navbar {
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.sw-header h1,
+.sw-header p {
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.l-body > .container > h2 {
+  font-size: 36px;
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.l-body > .container > h1,
+.l-body > .container > h3 {
+  font-family: "Gibson-SemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+.l-body > .container > p {
+  font-family: "Gibson-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 .form-action-clear {
   display: none;

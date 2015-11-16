@@ -10,8 +10,5 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.0"
-  },
-  "devDependencies": {
-    "prism": "git@github.com:LeaVerou/prism.git#gh-pages"
   }
 }

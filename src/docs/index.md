@@ -5,6 +5,7 @@ name: Introduction
 description: Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.
 ---
 
+<a name="code"></a>
 ## Code
 
 ### Data attributes
@@ -15,21 +16,21 @@ Add `data-input="quick-search"` attribute to a text input element, which initiat
 
 Then you must specify a target collection. Use `data-search-target` attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.
 
-{% example html %}
+```html
 <input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
-{% endexample %}
+```
 
 ### JavaScript
 
 You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:
 
-{% highlight js %}
+```js
 $('.js-quick-search').quickSearch()
-{% endhighlight %}
+```
 
 This plugin offers a few options, so it can be used without Twitter Bootstrap framework.
 
-
+<a name="example"></a>
 ## Example
 
 ### Table
@@ -99,10 +100,9 @@ The more data you want to show, the more you need some way of filtering. This pl
       </tr>
     </tbody>
   </table>
+</div>
 
-</div><!-- /sw-example -->
-
-{% example html %}
+```html
 <div class="form-group">
 <input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
 <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
@@ -127,6 +127,6 @@ The more data you want to show, the more you need some way of filtering. This pl
   </tr>
 </tbody>
 </table>
-{% endexample %}
+```
 
 

@@ -20,7 +20,7 @@
   <!-- Common stylesheet for all devices -->
   <link rel="stylesheet" href="./stylesheets/docs.css">
   <link rel="stylesheet" href="./libs/prism/prism.css">
-  <script src="./libs/prism/prism.js"></script>
+  <!-- <script src="./libs/prism/prism.js"></script> -->
   <!-- Place anything custom after this. -->
 
   <!-- TODO: Favicons -->
@@ -57,13 +57,10 @@
     <nav class="collapse navbar-collapse sw-navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a href="#introduction">Introduction</a>
-        </li>
-        <li>
           <a href="#code">Code</a>
         </li>
         <li>
-          <a href="#examples">Example</a>
+          <a href="#example">Example</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -71,7 +68,7 @@
         <li>
           <div class="btn-group">
             <a href="https://github.com/skywalkplugins/bootstrap-quick-search/archive/master.zip" class="btn btn-primary" role="button">
-              Download Quick Search v
+              Download Quick Search v0.1.2
             </a>
           </div>
         </li>
@@ -87,47 +84,46 @@
     <!-- Page content -->
     <div id="content" class="l-body" role="main">
 
-    <div class="sw-header" id="introduction">
-      <div class="container">
+      <div class="sw-header" id="introduction">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="page-header">Quick search for Bootstrap</h1>
-            <p class="sw-text lead">Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="page-header">Quick search for Bootstrap</h1>
+              <p class="sw-text lead">Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+            </div>
           </div>
-        </div>
 
-      </div><!-- /container -->
+        </div><!-- /container -->
 
-    </div><!-- /sw-header -->
+      </div><!-- /sw-header -->
 
       <div class="container">
-        <h2 id="code">Code</h2>
+        <p><a name="code"></a></p>
 
-<h3 id="data-attributes">Data attributes</h3>
+<h2>Code</h2>
 
-<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap’s conventions and should be your first consideration when using a plugin.</p>
+<h3>Data attributes</h3>
 
-<p>Add <code>data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.</p>
+<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap&#39;s conventions and should be your first consideration when using a plugin.</p>
+
+<p>Add <code>data-input=&quot;quick-search&quot;</code> attribute to a text input element, which initiates Quick Search via data API.</p>
 
 <p>Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">&quot;quick-search&quot;</span> <span class="na">data-search-target=</span><span class="s">&quot;#searchable-table tbody &gt; tr&quot;</span> <span class="na">name=</span><span class="s">&quot;quick-search&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<h3>JavaScript</h3>
 
-<div class="sw-example" data-example-id="">
-<input data-input="quick-search" data-search-target="#searchable-table tbody &gt; tr" name="quick-search" />
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">"quick-search"</span> <span class="na">data-search-target=</span><span class="s">"#searchable-table tbody &gt; tr"</span> <span class="na">name=</span><span class="s">"quick-search"</span><span class="nt">&gt;</span></code></pre></div>
-
-<h3 id="javascript">JavaScript</h3>
-
-<p>You don’t have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.js-quick-search'</span><span class="p">).</span><span class="nx">quickSearch</span><span class="p">()</span></code></pre></figure>
-
+<p>You don&#39;t have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.js-quick-search&#39;</span><span class="p">).</span><span class="nx">quickSearch</span><span class="p">()</span>
+</code></pre></div>
 <p>This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
 
-<h2 id="example">Example</h2>
+<p><a name="example"></a></p>
 
-<h3 id="table">Table</h3>
+<h2>Example</h2>
+
+<h3>Table</h3>
 
 <p>The more data you want to show, the more you need some way of filtering. This plugin features:</p>
 
@@ -135,7 +131,7 @@
   <div class="sw-panel">
     <div class="form-group">
       <!-- data-input="quick-search" -->
-      <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody &gt; tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword..." />
+      <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword...">
 
       <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
     </div>
@@ -194,42 +190,13 @@
       </tr>
     </tbody>
   </table>
-
 </div>
-<!-- /sw-example -->
-
-<div class="sw-example" data-example-id="">
-<div class="form-group">
-<input data-input="quick-search" data-search-target="#searchable-table tbody &gt; tr" name="quick-search" />
-<span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
-</div>
-
-<table id="searchable-table">
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Occupation</th>
-    <th>Nationality</th>
-    <th>Age</th>
-  </tr>
-</thead>
-
-<tbody>
-  <tr>
-    <td>...</td>
-    <td>...</td>
-    <td>...</td>
-    <td>...</td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">"quick-search"</span> <span class="na">data-search-target=</span><span class="s">"#searchable-table tbody &gt; tr"</span> <span class="na">name=</span><span class="s">"quick-search"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-remove-circle form-control-feedback form-action-clear"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">&quot;quick-search&quot;</span> <span class="na">data-search-target=</span><span class="s">&quot;#searchable-table tbody &gt; tr&quot;</span> <span class="na">name=</span><span class="s">&quot;quick-search&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-remove-circle form-control-feedback form-action-clear&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"searchable-table"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;searchable-table&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
@@ -247,9 +214,8 @@
     <span class="nt">&lt;td&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;/tbody&gt;</span>
-<span class="nt">&lt;/table&gt;</span></code></pre></div>
-
-
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
         <div class="sw-section sw-footer">
 	<div class="row">

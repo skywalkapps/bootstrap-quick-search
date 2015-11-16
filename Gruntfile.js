@@ -36,9 +36,7 @@ module.exports = function(grunt) {
       files: [
         { expand: true, src: ['.gitignore'], dest: 'docs' },
         { expand: true, cwd: 'src', src: ['index.html'], dest: 'docs' },
-        { expand: true, cwd: 'vendor/prism', src: ['prism.js'], dest: 'docs/libs/prism' },
-        { expand: true, cwd: 'vendor/bootstrap/dist/js', src: ['bootstrap.min.js'], dest: 'docs/libs/bootstrap' },
-        { expand: true, cwd: 'vendor/prism/themes', src: ['*'], dest: 'docs/libs/prism' }
+        { expand: true, cwd: 'vendor/bootstrap/dist/js', src: ['bootstrap.min.js'], dest: 'docs/libs/bootstrap' }
       ]
     }
   };

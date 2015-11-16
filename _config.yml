@@ -1,6 +1,6 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      rouge
+markdown:         redcarpet
+highlighter:      pygments
 
 kramdown:
   auto_ids: true
@@ -19,7 +19,7 @@ baseurl:          ""
 encoding:         UTF-8
 
 # Custom vars
-current_version:  0.1.0
+current_version:  0.1.2
 repo:             https://github.com/skywalkplugins/bootstrap-quick-search
 
 vendor:			  ./vendor

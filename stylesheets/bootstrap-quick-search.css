@@ -1,0 +1,19 @@
+/*!
+ * bootstrap-quick-search v0.9.0 (https://skywalkapps.github.io/bootstrap-quick-search)
+ * Copyright 2016 Martin Staněk
+ * Licensed under MIT
+ */
+.form-action-clear {
+  display: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+.form-action-clear:before {
+  color: #777777;
+}
+.form-action-clear:hover:before {
+  color: #333333;
+}
+.has-feedback .form-action-clear {
+  display: block;
+}

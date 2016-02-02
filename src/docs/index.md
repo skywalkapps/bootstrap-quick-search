@@ -1,39 +1,21 @@
 ---
 layout: default
-title: Quick search for Bootstrap
-name: Introduction
+title: Quick Search for Bootstrap
+name: Quick Search
 description: Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.
 ---
 
-<a name="code"></a>
-## Code
+### Quick Search basics
 
-### Data attributes
+You can use Quick Search purely through the markup API without writing a single line of JavaScript (just like Bootstrap). Add `data-input="quick-search"` attribute to a text input element, which initiates Quick Search via data API.
 
-You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap's conventions and should be your first consideration when using a plugin.
+Then you must specify a target collection. Use `data-search-target` attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc.
 
-Add `data-input="quick-search"` attribute to a text input element, which initiates Quick Search via data API.
-
-Then you must specify a target collection. Use `data-search-target` attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.
-
-```html
+~~~html
 <input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
-```
+~~~
 
-### JavaScript
-
-You don't have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:
-
-```js
-$('.js-quick-search').quickSearch()
-```
-
-This plugin offers a few options, so it can be used without Twitter Bootstrap framework.
-
-<a name="example"></a>
-## Example
-
-### Table
+### Searchable Table
 
 The more data you want to show, the more you need some way of filtering. This plugin features:
 
@@ -102,7 +84,7 @@ The more data you want to show, the more you need some way of filtering. This pl
   </table>
 </div>
 
-```html
+~~~html
 <div class="form-group">
 <input data-input="quick-search" data-search-target="#searchable-table tbody > tr" name="quick-search">
 <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
@@ -127,6 +109,35 @@ The more data you want to show, the more you need some way of filtering. This pl
   </tr>
 </tbody>
 </table>
-```
+~~~
 
+### Quick Search Overview
 
+This table gives you a quick overview of elements and variables.
+
+<div class="table-responsive sw-table">
+  <table class="table table-bordered">
+    <thead>
+     <tr>
+       <th style="width: 100px">Name</th>
+       <th style="width: 200px">Class</th>
+       <th>Usage</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Clear Icon</strong></td>
+        <td><code>.form-action-clear</code></td>
+        <td>
+          <p>Extension of Bootstrap's feedback icons. Clears the text input field.</p>
+
+          <strong>Variables:</strong>
+          <ul>
+            <li><code>@feedback-action-color: @gray-light;</code><br><span class="text-muted">Color of the clear icon</span></li>
+            <li><code>@feedback-action-hover-color: @text-color;</code><br><span class="text-muted">Hover color of the clear icon.</span></li>
+          </ul>
+        </td>
+      </tr>
+   </tbody>
+  </table>
+</div>

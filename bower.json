@@ -1,12 +1,24 @@
 {
   "name": "bootstrap-quick-search",
-  "description": "Simple JS search plugin for Twitter Bootstrap.",
-  "version": "0.1.0",
+  "description": "Simple javascript search plugin for Bootstrap.",
+  "version": "0.9.0",
   "keywords": [
     "search",
+    "plugin",
     "bootstrap",
     "front-end",
     "js"
+  ],
+  "main": [
+    "./dist/stylesheets/bootstrap-quick-search.min.css",
+    "./dist/stylesheets/bootstrap-quick-search.min.js"
+  ],
+  "ignore": [
+    "log",
+    "docs",
+    "grunt",
+    ".editorconfig",
+    ".gitignore"
   ],
   "dependencies": {
     "bootstrap": "~3.3.0"

@@ -13,14 +13,17 @@
   <meta name="keywords" content="HTML, CSS, bootstrap, front-end, frontend, plugin, module">
   <meta name="author" content="Martin Staněk">
 
-  <title>Skywalk plugins | Quick search for Bootstrap</title>
+  <title>Skywalk Apps | Quick Search for Bootstrap</title>
 
   <link rel="icon" href="./assets/images/favicon.ico">
 
   <!-- Common stylesheet for all devices -->
-  <link rel="stylesheet" href="./stylesheets/docs.css">
-  <link rel="stylesheet" href="./libs/prism/prism.css">
-  <!-- <script src="./libs/prism/prism.js"></script> -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- Common stylesheet for all devices -->
+  <link rel="stylesheet" href="stylesheets/skywalk-docs.min.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-quick-search.min.css">
+
   <!-- Place anything custom after this. -->
 
   <!-- TODO: Favicons -->
@@ -35,13 +38,11 @@
   </head>
 
 
-  <body class="sw-docs">
+  <body class="sw-docs" data-spy="scroll" data-target=".sw-aside">
     <a class="sr-only" href="#content">Skip navigation</a>
 
     <!-- Page search and navigation -->
     <div class="l-sidebar">
-      <a href="../" class="logo f-custom-medium">Skywalk</a>
-
       <div class="l-sidebar-body">
         <header class="navbar navbar-fixed-top navbar-default" id="top" role="banner">
   <div class="container">
@@ -52,27 +53,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand">Skywalk <small>plugins</small></a>
+      <a href="../" class="navbar-brand logo">Skywalk <small>Quick Search</small></a>
     </div>
     <nav class="collapse navbar-collapse sw-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#code">Code</a>
-        </li>
-        <li>
-          <a href="#example">Example</a>
-        </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/skywalkplugins/bootstrap-quick-search">Github</a></li>
+        <!-- <li><a href="#">Bootstrap for Apps</a></li> -->
+        <li><a href="https://github.com/skywalkapps/bootstrap-quick-search">Github</a></li>
         <li>
           <div class="btn-group">
-            <a href="https://github.com/skywalkplugins/bootstrap-quick-search/archive/master.zip" class="btn btn-primary" role="button">
-              Download Quick Search v0.1.2
+            <a href="https://github.com/skywalkapps/bootstrap-quick-search/archive/master.zip" class="btn btn-primary navbar-btn" role="button">
+              Download Quick Search v0.9.0
             </a>
           </div>
         </li>
-
       </ul>
     </nav>
   </div>
@@ -89,7 +82,7 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h1 class="page-header">Quick search for Bootstrap</h1>
+              <h1 class="page-header">Quick Search for Bootstrap</h1>
               <p class="sw-text lead">Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
             </div>
           </div>
@@ -99,31 +92,19 @@
       </div><!-- /sw-header -->
 
       <div class="container">
-        <p><a name="code"></a></p>
+        <div class="row">
+          <div class="col-md-9 content">
+            <h3 id="quick-search-basics">Quick Search basics</h3>
 
-<h2>Code</h2>
+<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript (just like Bootstrap). Add <code class="highlighter-rouge">data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.</p>
 
-<h3>Data attributes</h3>
+<p>Then you must specify a target collection. Use <code class="highlighter-rouge">data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc.</p>
 
-<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript. This is based on Twitter Bootstrap&#39;s conventions and should be your first consideration when using a plugin.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">"quick-search"</span> <span class="na">data-search-target=</span><span class="s">"#searchable-table tbody &gt; tr"</span> <span class="na">name=</span><span class="s">"quick-search"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
 
-<p>Add <code>data-input=&quot;quick-search&quot;</code> attribute to a text input element, which initiates Quick Search via data API.</p>
-
-<p>Then you must specify a target collection. Use <code>data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc. The plugin searches for the text value within elements of the specified collection.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">&quot;quick-search&quot;</span> <span class="na">data-search-target=</span><span class="s">&quot;#searchable-table tbody &gt; tr&quot;</span> <span class="na">name=</span><span class="s">&quot;quick-search&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<h3>JavaScript</h3>
-
-<p>You don&#39;t have to use data attributes, Quick Search can be also instantiated by JavaScript, just like ordinary jQuery plugin:</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.js-quick-search&#39;</span><span class="p">).</span><span class="nx">quickSearch</span><span class="p">()</span>
-</code></pre></div>
-<p>This plugin offers a few options, so it can be used without Twitter Bootstrap framework.</p>
-
-<p><a name="example"></a></p>
-
-<h2>Example</h2>
-
-<h3>Table</h3>
+<h3 id="searchable-table">Searchable Table</h3>
 
 <p>The more data you want to show, the more you need some way of filtering. This plugin features:</p>
 
@@ -131,7 +112,7 @@
   <div class="sw-panel">
     <div class="form-group">
       <!-- data-input="quick-search" -->
-      <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody > tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword...">
+      <input class="form-control" data-input="quick-search" data-search-target="#searchable tbody &gt; tr" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword..." />
 
       <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
     </div>
@@ -191,12 +172,13 @@
     </tbody>
   </table>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">&quot;quick-search&quot;</span> <span class="na">data-search-target=</span><span class="s">&quot;#searchable-table tbody &gt; tr&quot;</span> <span class="na">name=</span><span class="s">&quot;quick-search&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-remove-circle form-control-feedback form-action-clear&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">"quick-search"</span> <span class="na">data-search-target=</span><span class="s">"#searchable-table tbody &gt; tr"</span> <span class="na">name=</span><span class="s">"quick-search"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-remove-circle form-control-feedback form-action-clear"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;searchable-table&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"searchable-table"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
@@ -215,16 +197,66 @@
   <span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
+
+<h3 id="quick-search-overview">Quick Search Overview</h3>
+
+<p>This table gives you a quick overview of elements and variables.</p>
+
+<div class="table-responsive sw-table">
+  <table class="table table-bordered">
+    <thead>
+     <tr>
+       <th style="width: 100px">Name</th>
+       <th style="width: 200px">Class</th>
+       <th>Usage</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Clear Icon</strong></td>
+        <td><code>.form-action-clear</code></td>
+        <td>
+          <p>Extension of Bootstrap's feedback icons. Clears the text input field.</p>
+
+          <strong>Variables:</strong>
+          <ul>
+            <li><code>@feedback-action-color: @gray-light;</code><br /><span class="text-muted">Color of the clear icon</span></li>
+            <li><code>@feedback-action-hover-color: @text-color;</code><br /><span class="text-muted">Hover color of the clear icon.</span></li>
+          </ul>
+        </td>
+      </tr>
+   </tbody>
+  </table>
+</div>
+
+          </div>
+
+          <div class="col-md-3 hidden-sm hidden-xs">
+            <div class="sw-aside">
+  <nav class="sw-nav-tree">
+    <ul class="nav">
+      <li><a href="#quick-search-basics">Quick Search basics</a></li>
+      <li><a href="#searchable-table">Searchable Table</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="#quick-search-overview">Quick Search Overview</a></li>
+    </ul>
+  </nav>
+</div>
+
+          </div>
+        </div>
+
 
         <div class="sw-section sw-footer">
-	<div class="row">
-	  <div class="col-md-6 col-md-offset-3">
-	    <p class="sw-text">Quick Search is part of Skywalk plugins, which extend Twitter Bootstrap. These useful components will save you a lot of development time.</p>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <p class="sw-text">Quick Search component is part of Skywalk, set of components and extensions for Bootstrap Framework. Skywalk aims to give you quality components and save you a lot of development time.</p>
 
-	    <p class="sw-text">Created by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/icoach">@icoach</a> </p>
-	  </div>
-	</div>
+      <p class="sw-text">Created with care by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/skywalkapps">@skywalkapps</a> </p>
+    </div>
+  </div>
 </div><!-- /sw-section -->
 
       </div>

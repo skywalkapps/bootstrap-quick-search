@@ -11,28 +11,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="HTML, CSS, bootstrap, front-end, frontend, plugin, module">
+  <meta name="description" content="Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.">
   <meta name="author" content="Martin Staněk">
 
-  <title>Skywalk Apps | Quick Search for Bootstrap</title>
-
-  <link rel="icon" href="./assets/images/favicon.ico">
-
-  <!-- Common stylesheet for all devices -->
-  <link rel="icon" href="assets/images/favicon.ico">
+  <title>Quick Search for Bootstrap - by @skywalkapps</title>
 
   <!-- Common stylesheet for all devices -->
   <link rel="stylesheet" href="stylesheets/skywalk-docs.min.css">
   <link rel="stylesheet" href="stylesheets/bootstrap-quick-search.min.css">
 
-  <!-- Place anything custom after this. -->
-
-  <!-- TODO: Favicons -->
-  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                 <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
-
+  <!-- Favicons -->
+  <meta name="apple-mobile-web-app-title" content="Skywalk">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
 
     <!-- Place anything custom after this. -->
   </head>
@@ -53,7 +55,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand logo">Skywalk <small>Quick Search</small></a>
+      <a href="http://skywalkapps.github.io" class="navbar-brand logo"><span>Skywalk</span> <small>Quick Search</small></a>
     </div>
     <nav class="collapse navbar-collapse sw-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -252,7 +254,7 @@
         <div class="sw-section sw-footer">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <p class="sw-text">Quick Search component is part of Skywalk, set of components and extensions for Bootstrap Framework. Skywalk aims to give you quality components and save you a lot of development time.</p>
+      <p class="sw-text">Quick Search is part of Skywalk, set of components and extensions for Bootstrap Framework. Skywalk gives you fine quality components, which will save you a lot of development time.</p>
 
       <p class="sw-text">Created with care by Martin Staněk, Twitter: <a href="https://twitter.com/koucik">@koucik</a>, Github: <a href="https://github.com/skywalkapps">@skywalkapps</a> </p>
     </div>
@@ -265,9 +267,31 @@
     <!-- Footer and JS -->
     <!-- Javascripts
     ================================================== -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="./libs/bootstrap/bootstrap.min.js"></script>
-    <script src="./javascripts/bootstrap-quick-search.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="libs/bootstrap/bootstrap.min.js"></script>
+<script src="javascripts/bootstrap-quick-search.js"></script>
+
+<script>
+$(function(){
+  $('.sw-aside').affix({
+    offset: {
+      top: $('.sw-header').outerHeight() - 45 // margin
+    }
+  })
+})
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72436545-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 
   </body>
 </html>

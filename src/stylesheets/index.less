@@ -1,12 +1,10 @@
 //
-// TWITTER BOOTSTRAP PLUGIN: Quick search
+// BOOTSTRAP PLUGIN: Quick search
 // This module extends basic search field, adds clear icon
 
-// @name: Layer
-// @description: This module makes basic .modal more flexible (dimensions, position)
-// @author: Martin Staněk (https://github.com/icoach)
+// @author: Martin Staněk (https://github.com/skywalkapps)
 // @extends: input.form-control
-// @bootstrap: 3.2
+// @bootstrap: 3.2+
 // -------------------------------
 
 // Local variables
@@ -15,19 +13,10 @@
 // -------------------
 @libPath: '../../vendor';
 
-// BOOTSTRAP
-// ===================
-
-// BOOTSTRAP: CORE
-// -------------------
-
 // Core variables and mixins
-@import "@{libPath}/bootstrap/less/variables.less";
-@import "@{libPath}/bootstrap/less/mixins.less";
-
-// LIBRARIES
-// -------------------
+@import "@{libPath}/bootstrap/less/variables";
+@import "@{libPath}/bootstrap/less/mixins";
 
 // MODULES
 // -------------------
-@import 'modules/form-feedback-action/index';
+@import 'modules/form-feedback-action';

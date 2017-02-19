@@ -20,6 +20,15 @@ module.exports = {
     }
   },
 
+  docs: {
+    options: {
+      compress: true
+    },
+    files: {
+      'docs/stylesheets/<%= package.name %>.css': 'src/stylesheets/index.less'
+    }
+  },
+
   dist: {
     options: {
       compress: true

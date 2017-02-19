@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-quick-search",
   "description": "Simple javascript search plugin for Bootstrap.",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "keywords": [
     "search",
     "plugin",
@@ -22,5 +22,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.0"
+  },
+  "devDependencies": {
+    "bootstrap-dropmenu": "^0.9.0"
   }
 }

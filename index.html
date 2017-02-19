@@ -11,14 +11,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="HTML, CSS, bootstrap, front-end, frontend, plugin, module">
-  <meta name="description" content="Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.">
+  <meta name="description" content="Simple script to search strings within collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.">
   <meta name="author" content="Martin Staněk">
 
   <title>Quick Search for Bootstrap - by @skywalkapps</title>
 
   <!-- Common stylesheet for all devices -->
   <link rel="stylesheet" href="stylesheets/skywalk-docs.min.css">
-  <link rel="stylesheet" href="stylesheets/bootstrap-quick-search.min.css">
+  <link rel="stylesheet" href="libs/bootstrap-dropmenu/stylesheets/bootstrap-dropmenu.min.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-quick-search.css">
 
   <!-- Favicons -->
   <meta name="apple-mobile-web-app-title" content="Skywalk">
@@ -63,8 +64,8 @@
         <li><a href="https://github.com/skywalkapps/bootstrap-quick-search">Github</a></li>
         <li>
           <div class="btn-group">
-            <a href="https://github.com/skywalkapps/bootstrap-quick-search/archive/master.zip" class="btn btn-primary navbar-btn" role="button">
-              Download Quick Search v0.9.0
+            <a href="https://github.com/skywalkapps/bootstrap-quick-search/releases/download/v0.9.1/bootstrap-quick-search-0.9.1-dist.zip" class="btn btn-primary navbar-btn" role="button">
+              Download Quick Search v0.9.1
             </a>
           </div>
         </li>
@@ -85,7 +86,7 @@
           <div class="row">
             <div class="col-md-8">
               <h1 class="page-header">Quick Search for Bootstrap</h1>
-              <p class="sw-text lead">Simple library for searching any collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
+              <p class="sw-text lead">Simple script to search strings within collection of elements. Useful for prototyping, when you don't have backend funcionality implemented, or for production, when you require ultra simple searching solution.</p>
             </div>
           </div>
 
@@ -98,7 +99,7 @@
           <div class="col-md-9 content">
             <h3 id="quick-search-basics">Quick Search basics</h3>
 
-<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript (just like Bootstrap). Add <code class="highlighter-rouge">data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.</p>
+<p>You can use Quick Search purely through the markup API without writing a single line of JavaScript (just like Bootstrap does it). Add <code class="highlighter-rouge">data-input="quick-search"</code> attribute to a text input element, which initiates Quick Search via data API.</p>
 
 <p>Then you must specify a target collection. Use <code class="highlighter-rouge">data-search-target</code> attribute and make sure it is pointing to a collection of elements, f.e. table rows, list items etc.</p>
 
@@ -200,6 +201,86 @@
 <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 </code></pre>
+</div>
+
+<h3 id="dropdown-menu">Dropdown menu</h3>
+
+<p>Dropdown menus are not suitable for many list items. Easiest way to improve user experience, is to add simple filtering:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">data-input=</span><span class="s">"quick-search"</span> <span class="na">data-search-target=</span><span class="s">"#list-of-states &gt; li"</span> <span class="na">name=</span><span class="s">"quick-search"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<div class="sw-example">
+  <div class="btn-group dropdown sw-open" style="margin-right:20px">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Very long menu
+      <span class="caret"></span>
+    </button>
+
+    <div class="dropdown-container">
+
+      <div class="dropdown-toolbar">
+        <div class="form-group">
+          <input class="form-control" data-input="quick-search" data-search-target="#list-of-states &gt; li" placeholder="search for keyword..." name="quick-search-2" data-noresult-text="No results for given keyword..." />
+          <span class="glyphicon glyphicon-remove-circle form-control-feedback form-action-clear" aria-hidden="true"></span>
+        </div>
+      </div><!-- /dropdown-toolbar -->
+
+      <div class="dropdown-divider"></div>
+
+      <ul id="list-of-states" class="dropdown-menu">
+        <li><a href="#">Alabama </a></li>
+        <li><a href="#">Alaska </a></li>
+        <li><a href="#">Arizona </a></li>
+        <li><a href="#">Arkansas </a></li>
+        <li><a href="#">California </a></li>
+        <li><a href="#">Colorado </a></li>
+        <li><a href="#">Connecticut </a></li>
+        <li><a href="#">Delaware </a></li>
+        <li><a href="#">Florida </a></li>
+        <li><a href="#">Georgia </a></li>
+        <li><a href="#">Hawaii </a></li>
+        <li><a href="#">Idaho </a></li>
+        <li><a href="#">Illinois Indiana </a></li>
+        <li><a href="#">Iowa </a></li>
+        <li><a href="#">Kansas </a></li>
+        <li><a href="#">Kentucky </a></li>
+        <li><a href="#">Louisiana </a></li>
+        <li><a href="#">Maine </a></li>
+        <li><a href="#">Maryland </a></li>
+        <li><a href="#">Massachusetts </a></li>
+        <li><a href="#">Michigan </a></li>
+        <li><a href="#">Minnesota </a></li>
+        <li><a href="#">Mississippi </a></li>
+        <li><a href="#">Missouri </a></li>
+        <li><a href="#">Montana Nebraska </a></li>
+        <li><a href="#">Nevada </a></li>
+        <li><a href="#">New Hampshire </a></li>
+        <li><a href="#">New Jersey </a></li>
+        <li><a href="#">New Mexico </a></li>
+        <li><a href="#">New York </a></li>
+        <li><a href="#">North Carolina </a></li>
+        <li><a href="#">North Dakota </a></li>
+        <li><a href="#">Ohio </a></li>
+        <li><a href="#">Oklahoma </a></li>
+        <li><a href="#">Oregon </a></li>
+        <li><a href="#">Pennsylvania Rhode Island </a></li>
+        <li><a href="#">South Carolina </a></li>
+        <li><a href="#">South Dakota </a></li>
+        <li><a href="#">Tennessee </a></li>
+        <li><a href="#">Texas </a></li>
+        <li><a href="#">Utah </a></li>
+        <li><a href="#">Vermont </a></li>
+        <li><a href="#">Virginia </a></li>
+        <li><a href="#">Washington </a></li>
+        <li><a href="#">West Virginia </a></li>
+        <li><a href="#">Wisconsin </a></li>
+        <li><a href="#">Wyoming</a></li>
+      </ul>
+
+    </div><!-- /dropdown-container -->
+  </div><!-- /dropdown -->
 </div>
 
 <h3 id="quick-search-overview">Quick Search Overview</h3>

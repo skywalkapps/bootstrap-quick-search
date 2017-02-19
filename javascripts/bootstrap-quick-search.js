@@ -1,8 +1,8 @@
 /* ========================================================================
- * Quick Search: bootstrap-quick-search.js v0.1.0
+ * Quick Search: bootstrap-quick-search.js v0.9.1
  * ========================================================================
- * Copyright 2015 Martin Stanek, Twitter: @koucik, Github: @icoach
- * Licensed under MIT (https://github.com/icoach/bootstrap-quick-search/blob/master/LICENSE)
+ * Copyright 2015 Martin Stanek, Twitter: @koucik, Github: @skywalkapps
+ * Licensed under MIT (https://github.com/skywalkapps/bootstrap-quick-search/blob/master/LICENSE)
  * ======================================================================== */
 
 
@@ -52,7 +52,7 @@
   QuickSearch.prototype.clear = function (e) {
     var input = $(e.target).prev()
 
-    // Stop event propagation (input can be inside dropdown etc.) 
+    // Stop event propagation (input can be inside dropdown etc.)
     e.stopPropagation()
 
     // Reset

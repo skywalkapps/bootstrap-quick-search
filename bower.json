@@ -20,10 +20,8 @@
     ".editorconfig",
     ".gitignore"
   ],
-  "dependencies": {
-    "bootstrap": "~3.3.0"
-  },
   "devDependencies": {
+    "bootstrap": "~3.3.0",
     "bootstrap-dropmenu": "^0.9.0"
   }
 }

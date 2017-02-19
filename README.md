@@ -10,7 +10,7 @@ To get started, check out <http://skywalkapps.github.io/bootstrap-quick-search>!
 
 Quick search plugin is built for Bootstrap 3. You have following options of installation:
 
-- [Download the latest release](https://github.com/skywalkapps/bootstrap-quick-search/archive/v0.9.0.zip).
+- [Download the latest release](https://github.com/skywalkapps/bootstrap-quick-search/archive/v0.9.1.zip).
 - Clone the repo: `git clone https://github.com/skywalkapps/bootstrap-quick-search.git`.
 
 ### How to use
@@ -32,7 +32,7 @@ bootstrap-quick-search/
 **Martin Staněk**
 
 - <https://twitter.com/@koucik>
-- <https://github.com/@icoach>
+- <https://github.com/@skywalkapps>
 
 
 ## Copyright and license
